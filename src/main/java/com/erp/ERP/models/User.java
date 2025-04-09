@@ -1,4 +1,4 @@
-package com.erp.ERP.model;
+package com.erp.ERP.models;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,6 +30,6 @@ public class User {
     private String phone;
 
     @ManyToOne
-    @JoinColumn(name = "role_id, nullable = false")
+    @JoinColumn(name = "role_id", nullable = false)
     private Role role;
 }

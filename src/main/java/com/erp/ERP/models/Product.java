@@ -1,4 +1,4 @@
-package com.erp.ERP.model;
+package com.erp.ERP.models;
 
 import jakarta.persistence.*;
 import lombok.*;
