@@ -1,5 +1,7 @@
 package com.erp.ERP.models;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +28,9 @@ public class Payment {
 
     @Column(nullable = false)
     private String status;
+
+    @Column(nullable = false)
+    private LocalDate paymenDate;
 
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
