@@ -4,29 +4,25 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity
-@Table(name = "orders") // "order" es nombre reservado
+@Table(name = "report")
 @Getter
 @Setter
-public class Order {
+public class Report {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private LocalDate orderDate;
+    @Column(name = "generation_date", nullable = false)
+    private LocalDate generationDate;
 
-    @Column(nullable = false)
-    private Double total;
+    @Column(name = "file_path", nullable = false)
+    private String filePath;
 
-    @Column(nullable = false)
-    private String status;
-
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderProduct> items;
+    @Column(name = "type", nullable = false)
+    private String type;
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)
@@ -35,4 +31,8 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private Order order;
 }
