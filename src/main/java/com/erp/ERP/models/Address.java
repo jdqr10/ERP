@@ -1,11 +1,10 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
+import java.util.*;
 import lombok.*;
 
-import java.util.HashSet;
-import java.util.Set;
-
+@Data
 @Entity
 @Table(name = "address")
 @Getter

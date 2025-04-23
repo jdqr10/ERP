@@ -1,10 +1,11 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.*;
 
-import java.util.List;
 
+@Data
 @Entity
 @Table(name = "payment_method")
 @Getter

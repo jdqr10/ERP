@@ -1,11 +1,13 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
+import lombok.*;
+
+
+@Data
 @Entity
 @Table(name = "orders") // "order" es nombre reservado
 @Getter

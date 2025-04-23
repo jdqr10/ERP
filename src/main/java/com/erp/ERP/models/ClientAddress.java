@@ -3,6 +3,7 @@ package com.erp.ERP.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Data
 @Entity
 @Table(name = "client_address")
 @Getter
