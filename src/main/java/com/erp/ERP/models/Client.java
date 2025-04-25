@@ -1,6 +1,7 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
+import java.util.*;
 import lombok.*;
 
 
@@ -26,4 +27,8 @@ public class Client {
 
     @Column(nullable = false)
     private String phone;
+
+    @OneToMany(mappedBy = "client")
+    private Set<ClientAddress> clientAddresses = new HashSet<>();
+
 }

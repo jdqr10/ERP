@@ -18,7 +18,12 @@ public class Address {
     @Column(name = "address", nullable = false)
     private String address;
 
+    /*
     @ManyToMany(mappedBy = "addresses")
     private Set<Client> clients = new HashSet<>();
+    */
+
+    @OneToMany(mappedBy = "address")
+    private Set<ClientAddress> clientAddresses = new HashSet<>();
     
 }

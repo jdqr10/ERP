@@ -26,7 +26,7 @@ public class Product {
     private String description;
 
     @Column(nullable = false)
-    private Integer Stock;
+    private Integer stock;
 
     @OneToMany(mappedBy = "product")
     private List<OrderProduct> orderItems;
