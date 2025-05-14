@@ -19,7 +19,7 @@ public class securityConfig {
                 .csrf(csrf ->
                         csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/login", "/auth/register").permitAll() // ← aquí se permite acceso público
+                        .requestMatchers("/auth/login", "/auth/register", "/api/roles", "/api/roles/getRoles", "/api/roles/createRole").permitAll() // ← aquí se permite acceso público
                         .anyRequest().authenticated()
                 )
                 .formLogin(Customizer.withDefaults())

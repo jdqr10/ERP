@@ -31,4 +31,8 @@ public class Product {
     @OneToMany(mappedBy = "product")
     private List<OrderProduct> orderItems;
 
+    @ManyToOne
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company;
+
 }

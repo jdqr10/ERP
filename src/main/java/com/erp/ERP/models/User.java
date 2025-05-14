@@ -1,7 +1,9 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
+import java.util.List;
 import lombok.*;
+
 
 @Data
 @Entity
@@ -32,4 +34,8 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id", nullable = false)
     private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company;
 }

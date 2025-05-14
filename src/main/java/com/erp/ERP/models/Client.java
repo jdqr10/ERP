@@ -31,4 +31,7 @@ public class Client {
     @OneToMany(mappedBy = "client")
     private Set<ClientAddress> clientAddresses = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "company_id", nullable = false)
+    private Company company;
 }
