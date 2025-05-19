@@ -1,11 +1,39 @@
+# =====================================
+# Ayuda y archivos de construcción
+# =====================================
 HELP.md
+
+# =====================================
+# Maven / Java / Spring Boot
+# =====================================
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-docker_db/Config/mysql/*
 
-### STS ###
+
+# Ignorar carpetas de compilación
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# =====================================
+# Docker / Base de Datos
+# =====================================
+docker_db/Config/mysql/
+docker_db/Config/mysql_backup/
+docker_db/data/
+docker_db/volumes/
+*.sock
+*.pid
+*.cnf
+ib_logfile*
+ibdata*
+binlog*
+
+# =====================================
+# IDEs y herramientas de desarrollo
+# STS (Spring Tool Suite)
 .apt_generated
 .classpath
 .factorypath
@@ -14,24 +42,43 @@ docker_db/Config/mysql/*
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
+# IntelliJ IDEA
+.idea/
 *.iws
 *.iml
 *.ipr
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+
+# VS Code
 .vscode/
-*.sock
-docker_db/Config/mysql/
-docker_db/Config/mysql_backup/
+
+# =====================================
+# Node / React / Frontend
+# (suponiendo Vite o similar)
+frontend/node_modules/
+frontend/.env
+frontend/dist/
+frontend/.parcel-cache/
+frontend/.turbo/
+frontend/.vite
+
+# =====================================
+# Otros archivos comunes a ignorar
+*.log
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# =====================================
+# Git temporales
+*.orig
+*.rej
