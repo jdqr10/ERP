@@ -2,14 +2,9 @@ package com.erp.ERP.models;
 
 import jakarta.persistence.*;
 import java.util.*;
-import lombok.*;
 
-
-@Data
 @Entity
 @Table(name = "client")
-@Getter
-@Setter
 public class Client {
     
     @Id
@@ -34,4 +29,67 @@ public class Client {
     @ManyToOne
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
+
+    // Método personalizado para obtener el nombre completo
+    public String getName() {
+        return this.firstName + " " + this.lastName;
+    }
+
+    // ========== Getters y Setters ========== //
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Set<ClientAddress> getClientAddresses() {
+        return clientAddresses;
+    }
+
+    public void setClientAddresses(Set<ClientAddress> clientAddresses) {
+        this.clientAddresses = clientAddresses;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
 }

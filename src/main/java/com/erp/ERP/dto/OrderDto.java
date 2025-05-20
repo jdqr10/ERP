@@ -32,6 +32,7 @@ public class OrderDto {
         this.user = user;
     }
 
+
     // Getters and Setters
     public Long getId() {
         return id;
@@ -89,4 +90,23 @@ public class OrderDto {
         this.user = user;
     }
 
+    public String getCustomerName() {
+        return client != null ? client.getName() : null;
+    }
+
+    public Double getTotalAmount() {
+        return total;
+    }
+
+    public void setCustomerName(String fullName) {
+        if (client != null && fullName != null) {
+            String[] parts = fullName.split(" ", 2); 
+            client.setFirstName(parts[0]);
+            client.setLastName(parts.length > 1 ? parts[1] : "");
+        }
+    }
+
+    public void setTotalAmount(Double total) {
+        this.total = total; 
+    }
 }
