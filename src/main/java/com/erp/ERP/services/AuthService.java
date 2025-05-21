@@ -27,7 +27,7 @@ public class AuthService {
 
     public AuthResponse login (LoginRequestController request) {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getName(), request.getPassword()));
-        UserDetails user = userRepository.findByName(request.getName()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        UserDetails user = (UserDetails) userRepository.findByName(request.getName()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
         String token = jwtService.getToken(user);
         return AuthResponse.builder()
                 .token(token)
@@ -49,7 +49,7 @@ public class AuthService {
         userRepository.save(user);
 
         return AuthResponse.builder()
-                .token(jwtService.getToken(user))
+                .token(jwtService.getToken((UserDetails) user))
                 .build();
     }
 

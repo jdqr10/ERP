@@ -2,7 +2,7 @@ package com.erp.ERP.controller;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.ResponseEntity;
-import com.erp.ERP.service.AuthService;
+import com.erp.ERP.services.AuthService;
 
 import lombok.*;
 

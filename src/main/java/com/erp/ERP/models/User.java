@@ -1,16 +1,15 @@
 package com.erp.ERP.models;
 
 import jakarta.persistence.*;
-import java.util.List;
 import lombok.*;
 
 
 @Data
-@Builder
 @Entity
 @Table(name = "user")
-@Getter
-@Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     
     @Id
@@ -19,6 +18,9 @@ public class User {
 
     @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false)
+    private String name;
 
     @Column(nullable = false)
     private String firstName;
