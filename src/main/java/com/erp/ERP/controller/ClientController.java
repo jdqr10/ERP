@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import com.erp.ERP.dto.ClientDto;
 
 @RestController
-@RequestMapping("/api/clients")
+@RequestMapping("/api/protected/clients")
 public class ClientController {
     
     @Autowired

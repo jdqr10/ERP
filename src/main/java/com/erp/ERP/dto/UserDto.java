@@ -4,6 +4,8 @@ public class UserDto {
 
     private Long id;
     private String username;
+    private String firstName;
+    private String lastName;
     private String password;
     private String email;
     private String phoneNumber;
@@ -13,9 +15,11 @@ public class UserDto {
     }
 
     // Constructor
-    public UserDto(Long id, String username, String password, String email, String phoneNumber) {
+    public UserDto(Long id, String username, String password, String email, String phoneNumber, String firstName, String lastName) {
         this.id = id;
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -34,8 +38,12 @@ public class UserDto {
         return username;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
     }
 
     public String getPassword() {
