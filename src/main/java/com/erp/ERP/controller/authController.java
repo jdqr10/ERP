@@ -1,21 +1,26 @@
 package com.erp.ERP.controller;
 
 import org.springframework.web.bind.annotation.*;
-import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import com.erp.ERP.service.AuthService;
+
+import lombok.*;
 
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
 public class authController {
 
+   private final AuthService authService;
+
     @PostMapping(value = "/login")
-    public String login () {
-        return "Login from public endpoint";
+    public ResponseEntity<AuthResponse> login (@RequestBody LoginRequestController request) {
+        return ResponseEntity.ok(authService.login(request));
     }
 
     @PostMapping(value = "/register")
-    public String register () {
-        return "Register from public endpoint";
+    public ResponseEntity<AuthResponse> register (@RequestBody RegisterRequestController request) {
+        return ResponseEntity.ok(authService.register(request));
     }
 
 }
