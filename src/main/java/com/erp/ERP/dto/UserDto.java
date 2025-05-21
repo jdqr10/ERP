@@ -1,5 +1,7 @@
 package com.erp.ERP.dto;
 
+import com.erp.ERP.models.User;
+
 public class UserDto {
 
     private Long id;
@@ -13,6 +15,18 @@ public class UserDto {
     // Default constructor
     public UserDto() {
     }
+ 
+    // Constructor to create UserDto from User entity
+    public UserDto(User user) {
+    this.id = user.getId();
+    this.username = user.getUserName();
+    this.firstName = user.getFirstName();
+    this.lastName = user.getLastName();
+    this.password = user.getPassword();
+    this.email = user.getEmail();
+    this.phoneNumber = user.getPhone();
+}
+
 
     // Constructor
     public UserDto(Long id, String username, String password, String email, String phoneNumber, String firstName, String lastName) {
@@ -34,16 +48,28 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return username;
+    }
+
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -69,5 +95,4 @@ public class UserDto {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-    
 }

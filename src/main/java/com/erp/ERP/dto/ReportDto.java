@@ -1,27 +1,34 @@
 package com.erp.ERP.dto;
 
+import java.time.LocalDate;
+
 public class ReportDto {
-
     private Long id;
-    private String name;
-    private String description;
+    private LocalDate generationDate;
+    private String filePath;
     private String type;
-    private String date;
+    private Long clientId;
+    private Long userId;
+    private Long orderId;
 
-    // Default constructor
+    // Constructor
     public ReportDto() {
     }
 
-    // Constructor
-    public ReportDto(Long id, String name, String description, String type, String date) {
+    // Constructor with parameters
+    public ReportDto(Long id, LocalDate generationDate, String filePath, String type, Long clientId, Long userId, Long orderId) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.generationDate = generationDate;
+        this.filePath = filePath;
         this.type = type;
-        this.date = date;
+        this.clientId = clientId;
+        this.userId = userId;
+        this.orderId = orderId;
     }
 
-    // Getters and Setters
+
+    // Getters y Setters
+
     public Long getId() {
         return id;
     }
@@ -30,20 +37,20 @@ public class ReportDto {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public LocalDate getGenerationDate() {
+        return generationDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setGenerationDate(LocalDate generationDate) {
+        this.generationDate = generationDate;
     }
 
-    public String getDescription() {
-        return description;
+    public String getFilePath() {
+        return filePath;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
     public String getType() {
@@ -54,12 +61,27 @@ public class ReportDto {
         this.type = type;
     }
 
-    public String getDate() {
-        return date;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
-    
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
 }

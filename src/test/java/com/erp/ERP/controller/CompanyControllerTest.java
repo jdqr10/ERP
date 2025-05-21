@@ -5,9 +5,11 @@ import com.erp.ERP.services.CompanyService;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -25,6 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebMvcTest(CompanyController.class)
+@AutoConfigureMockMvc(addFilters = false) // Disable security filters for testing
 public class CompanyControllerTest {
 
     @Autowired

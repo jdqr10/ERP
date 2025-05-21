@@ -4,12 +4,9 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import lombok.*;
 
-
-@Data
 @Entity
 @Table(name = "report")
-@Getter
-@Setter
+
 public class Report {
     
     @Id
@@ -36,4 +33,63 @@ public class Report {
     @ManyToOne
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;
+
+    //Getters and Setters
+
+    public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
+}
+
+public LocalDate getGenerationDate() {
+    return generationDate;
+}
+
+public void setGenerationDate(LocalDate generationDate) {
+    this.generationDate = generationDate;
+}
+
+public String getFilePath() {
+    return filePath;
+}
+
+public void setFilePath(String filePath) {
+    this.filePath = filePath;
+}
+
+public String getType() {
+    return type;
+}
+
+public void setType(String type) {
+    this.type = type;
+}
+
+public Client getClient() {
+    return client;
+}
+
+public void setClient(Client client) {
+    this.client = client;
+}
+
+public User getUser() {
+    return user;
+}
+
+public void setUser(User user) {
+    this.user = user;
+}
+
+public Order getOrder() {
+    return order;
+}
+
+public void setOrder(Order order) {
+    this.order = order;
+}
+
 }

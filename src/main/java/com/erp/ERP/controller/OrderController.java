@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+
 import com.erp.ERP.services.OrderService;
 import com.erp.ERP.dto.OrderDto;
 
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.erp.ERP.dto.OrderDto;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/orders")
 public class OrderController {
     
     @Autowired
