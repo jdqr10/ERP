@@ -26,6 +26,8 @@ public class AuthService {
     private final AuthenticationManager authenticationManager;
 
     public AuthResponse login (LoginRequestController request) {
+        System.out.println("Nombre recibido: " + request.getName());
+        System.out.println("Password recibido: " + request.getPassword());
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getName(), request.getPassword()));
         UserDetails user = (UserDetails) userRepository.findByName(request.getName()).orElseThrow(() -> new UsernameNotFoundException("User not found"));
         String token = jwtService.getToken(user);
