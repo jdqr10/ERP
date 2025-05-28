@@ -8,7 +8,7 @@ import lombok.*;
 
 
 @Entity
-@Table(name = "orders") // "order" es nombre reservado
+@Table(name = "orders") 
 
 public class Order {
     

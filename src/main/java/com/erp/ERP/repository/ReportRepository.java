@@ -25,4 +25,5 @@ public interface ReportRepository extends JpaRepository<Report, Long> {
   List<Report> findByGenerationDate(LocalDate generationDate);
   
   List<Report> findByGenerationDateBetween(LocalDate startDate, LocalDate endDate);
+  
 }
