@@ -21,7 +21,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ApplicationConfig {
 
-    private final UserRepository userRepository;
+    private  UserRepository userRepository; 
 
     @Bean
     public AuthenticationManager getAuthenticationManager(AuthenticationConfiguration config) throws Exception {
