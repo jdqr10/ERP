@@ -30,7 +30,7 @@ public class Client {
     @JoinColumn(name = "company_id", nullable = false)
     private Company company;
 
-    // Método personalizado para obtener el nombre completo
+    // Custom method to get the full name
     public String getName() {
         return this.firstName + " " + this.lastName;
     }

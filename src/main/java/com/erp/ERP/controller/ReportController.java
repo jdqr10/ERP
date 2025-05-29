@@ -16,46 +16,46 @@ public class ReportController {
     @Autowired
     private ReportService reportService;
 
-    // Obtener todos los reportes
+    // Get all reports
     @GetMapping
     public List<ReportDto> getAllReports() {
         return reportService.findAll();
     }
 
-    // Obtener reportes por usuario (solo un método para esto)
+    // Get reports by user (only one method for this)
     @GetMapping("/user/{userId}")
     public List<ReportDto> getReportsByUserId(@PathVariable Long userId) {
         return reportService.findByUserId(userId);
     }
 
-    // Obtener reportes de tipo "sales", roles ADMIN y EMPLOYEE
+    // Get reports of type "sales", ADMIN and EMPLOYEE roles
     @GetMapping("/sales")
     @PreAuthorize("hasAnyRole('ADMIN','EMPLOYEE')")
     public List<ReportDto> getSalesReports() {
         return reportService.getReportsByType("sales");
     }
 
-    // Obtener reportes de tipo "inventory", roles ADMIN y EMPLOYEE
+    // Obtain "inventory" type reports, ADMIN and EMPLOYEE roles
     @GetMapping("/inventory")
     @PreAuthorize("hasAnyRole('ADMIN','EMPLOYEE')")
     public List<ReportDto> getInventoryReports() {
         return reportService.getReportsByType("inventory");
     }
 
-    // Obtener reportes de tipo "trends", solo rol ADMIN
+    // Obtain "trends" type reports, ADMIN role only
     @GetMapping("/trends")
     @PreAuthorize("hasRole('ADMIN')")
     public List<ReportDto> getTrendsReports() {
         return reportService.getReportsByType("trends");
     }
 
-    // Crear un reporte nuevo
+    // Create a new report
     @PostMapping("/create")
     public ReportDto createReport(@RequestBody ReportDto reportDto) {
         return reportService.createReport(reportDto);
     }
 
-    // Eliminar un reporte por id
+    // Delete a report by ID
     @DeleteMapping("/delete/{id}")
     public String deleteReport(@PathVariable Long id) {
         return reportService.deleteReport(id);

@@ -11,6 +11,7 @@ import org.mockito.*;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 class UserServiceTest {
@@ -54,7 +55,7 @@ class UserServiceTest {
 
         UserDto result = userService.createUser(request);
 
-        assertNotNull(result); // Aunque tu método devuelve un UserDto vacío
+        assertNotNull(result); // Although your method returns an empty UserDto
         verify(userRepository, times(1)).save(any(User.class));
     }
 
